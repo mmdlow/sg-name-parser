@@ -1,7 +1,7 @@
 const data = require('./data.json');
 
 const parser = module.exports = {};
-// attrs will contain firstName, lastName, middleName, fullName
+// attrs will contain firstName, lastName, fullName
 parser.parseName = function (name) {
     const tokens = name.trim().split(/\s+/).map(w => w.toProperCase());
     const attrs = {};
@@ -19,7 +19,8 @@ parser.parseName = function (name) {
     for (token of tokens) {
         if (data.chineseSurnames.includes(token)) {
             return parseChineseName(tokens, token);
-            break;
+        } else if (data.malaySurnames.includes(token)) {
+            return parseMalayName(tokens);
         }
     }
     return attrs;
@@ -36,7 +37,6 @@ parseChineseName = function(tokens, surname) {
             break;
         case 3:
             // first first last, last first first, first last first (to fix)
-            console.log('sh')
             const firstNames = tokens.filter(w => w !== surname);
             attrs.firstName = firstNames.join(' ');
             attrs.lastName = surname;
