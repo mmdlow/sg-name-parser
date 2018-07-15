@@ -10,6 +10,15 @@ test("Donald Lee Qian Siang", "Donald", "Lee");
 test("Lee Qian Siang Donald", "Donald", "Lee");
 test("Wong Jie Min", "Jie Min", "Wong");
 test("Jie Min, Wong", "Jie Min", "Wong");
+test("Matthew Low", "Matthew", "Low");
+test("Matthew Low Min De", "Matthew", "Low");
+test("Low Min De Matthew", "Matthew", "Low");
+test("Lee Kuan Yew", "Kuan Yew", "Lee");
+test("Kuan Yew, Lee", "Kuan Yew", "Lee");
+
+test("Mohammad Rafiq Bin Muzaffar", "Rafiq", "Muzaffar");
+test("Muhammad Danial Nur Hakim", "Danial", "Hakim");
+test("Mohamed Hadi Bin Haziq", "Hadi", "Hadiz");
 
 console.log(`\n   ${numPassed}/${numTested} passed.\n`)
 
